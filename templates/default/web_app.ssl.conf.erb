@@ -9,7 +9,9 @@
 
   DocumentRoot <%= @params[:path] %>
 
+  <ifModule mod_ruby.c>
   RailsEnv <%= @params[:rails_env] %>
+  </ifModule>
 
   <Directory <%= @params[:path] %>>
     Options FollowSymLinks
@@ -23,10 +25,14 @@
     AllowOverride None
   </Directory>
 
+  <ifModule mod_expires.c>
   ExpiresActive On
+  </ifModule>
   <Directory <%= "#{@params[:path]}/assets" %>>
     Options MultiViews
+    <ifModule mod_expires.c>
     ExpiresDefault "access plus 1 year"
+    </ifModule>
     Header set Access-Control-Allow-Origin "*"
   </Directory>
 
@@ -98,7 +104,9 @@
 
     DocumentRoot <%= @params[:path] %>
 
+    <ifModule mod_ruby.c>
     RailsEnv <%= @params[:rails_env] %>
+    </ifModule>
 
     <Directory <%= @params[:path] %>>
       Options FollowSymLinks
@@ -112,10 +120,14 @@
       AllowOverride None
     </Directory>
 
+    <ifModule mod_expires.c>
     ExpiresActive On
+    </ifModule>
     <Directory <%= "#{@params[:path]}/assets" %>>
       Options MultiViews
+      <ifModule mod_expires.c>
       ExpiresDefault "access plus 1 year"
+      </ifModule>
       Header set Access-Control-Allow-Origin "*"
     </Directory>
 
