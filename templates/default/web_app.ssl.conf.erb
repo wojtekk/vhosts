@@ -12,6 +12,7 @@
   <ifModule mod_ruby.c>
   RailsEnv <%= @params[:rails_env] %>
   </ifModule>
+  SetEnv APP_ENV <%= @params[:rails_env] %>
 
   <Directory <%= @params[:path] %>>
     Options FollowSymLinks
@@ -111,6 +112,7 @@
     <ifModule mod_ruby.c>
     RailsEnv <%= @params[:rails_env] %>
     </ifModule>
+    SetEnv APP_ENV <%= @params[:rails_env] %>
 
     <Directory <%= @params[:path] %>>
       Options FollowSymLinks
