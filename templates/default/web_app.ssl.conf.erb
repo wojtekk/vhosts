@@ -10,9 +10,9 @@
   DocumentRoot <%= @params[:path] %>
   
   <ifModule mod_ruby.c>
-  RailsEnv <%= @params[:rails_env] %>
+  RailsEnv <%= @params[:app_env] %>
   </ifModule>
-  SetEnv APP_ENV <%= @params[:rails_env] %>
+  SetEnv APP_ENV <%= @params[:app_env] %>
 
   <Directory <%= @params[:path] %>>
     Options FollowSymLinks
@@ -110,9 +110,9 @@
     DocumentRoot <%= @params[:path] %>
 
     <ifModule mod_ruby.c>
-    RailsEnv <%= @params[:rails_env] %>
+    RailsEnv <%= @params[:app_env] %>
     </ifModule>
-    SetEnv APP_ENV <%= @params[:rails_env] %>
+    SetEnv APP_ENV <%= @params[:app_env] %>
 
     <Directory <%= @params[:path] %>>
       Options FollowSymLinks

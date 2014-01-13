@@ -10,7 +10,7 @@ node['apache2']['vhosts'].each do |vhost|
     server_aliases vhost['aliases']
     ssl (vhost.include?('ssl') ? vhost['ssl'] : true)
     domain vhost['domain']
-    rails_env vhost['environment']
+    app_env vhost['environment']
     locations vhost['locations']
 
     if vhost['path']
