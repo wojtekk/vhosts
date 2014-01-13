@@ -44,3 +44,11 @@ attribute 'apache2/vhosts/assets_path',
   :display_name => 'Assets path',
   :description => 'Sets the assets path.',
   :type => 'string'
+
+attribute 'apache2/vhosts/extra_php_filetype',
+  :display_name => 'Additional PHP file types ',
+  :description => 'Sets the additional PHP file types (ex. *.html)',
+  :type => 'array'
+
+
+

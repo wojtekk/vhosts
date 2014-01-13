@@ -41,6 +41,7 @@ This cookbook uses the following attributes:
 * `node['apache']['vhosts']['domain']` - This sets the value of the domain used for SSL certificates.
 * `node['apache']['vhosts']['environment']` - This sets the APP_ENV environment variable.
 * `node['apache']['vhosts']['assets_path']` - This sets the path for assets files.
+* `node['apache']['vhosts']['extra_php_filetype']` - This sets the additional PHP file types (ex. *.html)
 
 Recipes
 =======

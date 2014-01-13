@@ -13,6 +13,7 @@ node['apache2']['vhosts'].each do |vhost|
     app_env vhost['environment']
     locations vhost['locations']
     assets_path (vhost.include?('assets_path') ? vhost['assets_path'] : '/assets' )
+    extra_php_filetype vhost['extra_php_filetype']
 
     if vhost['path']
       path vhost['path']

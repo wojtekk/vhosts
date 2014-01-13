@@ -59,9 +59,11 @@
   TransferLog <%= node['apache']['log_dir'] %>/<%= @params[:server_name] %>-transfer.log
   RewriteLog <%= node['apache']['log_dir'] %>/<%= @params[:server_name] %>-rewrite.log
 
+  <% if @params[:extra_php_filetype] -%>
   <ifModule mod_php5.c>
-  AddType application/x-httpd-php .html
+  AddType application/x-httpd-php <%= @params[:extra_php_filetype].join(' ') %>
   </ifModule>
+  <% end -%>
 
   AddOutputFilterByType DEFLATE text/html text/css application/x-javascript application/javascript
 
@@ -137,9 +139,11 @@
     TransferLog <%= node['apache']['log_dir'] %>/<%= @params[:server_name] %>-transfer.log
     RewriteLog <%= node['apache']['log_dir'] %>/<%= @params[:server_name] %>-rewrite.log
 
+    <% if @params[:extra_php_filetype] -%>
     <ifModule mod_php5.c>
-    AddType application/x-httpd-php .html
+    AddType application/x-httpd-php <%= @params[:extra_php_filetype].join(' ') %>
     </ifModule>
+    <% end -%>
 
     AddOutputFilterByType DEFLATE text/html text/css application/x-javascript application/javascript
 
