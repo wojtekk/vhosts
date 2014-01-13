@@ -75,10 +75,6 @@
   RewriteCond %{SCRIPT_FILENAME} !maintenance.html
   RewriteRule ^.*$  -  [redirect=503,last]
 
-  <% if node['apache2']['enable_optimispt_redirect'] -%>
-    RewriteRule ^((?!charts).)*$ https://rs-production.optimispt.com%{REQUEST_URI} [R,L]
-  <% end -%>
-
   <% if @params[:ssl] -%>
     RewriteCond %{REQUEST_URI} !^/api/v4(.*)$
     RewriteCond %{REQUEST_URI} !^/balancer.html$
@@ -162,9 +158,5 @@
     RewriteCond %{REQUEST_URI} !^/balancer.html$
     RewriteCond %{SCRIPT_FILENAME} !maintenance.html
     RewriteRule ^.*$  -  [redirect=503,last]
-
-    <% if node['apache2']['enable_optimispt_redirect'] -%>
-      RewriteRule ^((?!charts).)*$ https://rs-production.optimispt.com%{REQUEST_URI} [R,L]
-    <% end -%>
   </VirtualHost>
 <% end -%>
