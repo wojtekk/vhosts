@@ -39,7 +39,8 @@ This cookbook uses the following attributes:
 * `node['apache']['vhosts']['aliases']` - This sets the value of the ServerAlias directive (One for each alias provided).
 * `node['apache']['vhosts']['ssl']` - This boolean determines if an SSL vhost is created.
 * `node['apache']['vhosts']['domain']` - This sets the value of the domain used for SSL certificates.
-* `node['apache']['vhosts']['environment']` - This sets the passenger directive for RailsEnv.
+* `node['apache']['vhosts']['environment']` - This sets the APP_ENV environment variable.
+* `node['apache']['vhosts']['assets_path']` - This sets the path for assets files.
 
 Recipes
 =======

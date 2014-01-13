@@ -36,6 +36,11 @@ attribute 'apache2/vhosts/domain',
   :type => 'string'
 
 attribute 'apache2/vhosts/environment',
-  :display_name => 'Passenger RailsEnv Directive',
-  :description => 'Sets the rails environment.',
+  :display_name => 'APP_ENV environment variable',
+  :description => 'Sets the APP_ENV environment variable.',
+  :type => 'string'
+
+attribute 'apache2/vhosts/assets_path',
+  :display_name => 'Assets path',
+  :description => 'Sets the assets path.',
   :type => 'string'
