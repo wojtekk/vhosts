@@ -12,6 +12,7 @@ node['apache2']['vhosts'].each do |vhost|
     domain vhost['domain']
     app_env vhost['environment']
     locations vhost['locations']
+    assets_path (vhost.include?('assets_path') ? vhost['assets_path'] : '/assets' )
 
     if vhost['path']
       path vhost['path']

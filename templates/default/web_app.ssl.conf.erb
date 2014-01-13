@@ -29,7 +29,7 @@
   <ifModule mod_expires.c>
   ExpiresActive On
   </ifModule>
-  <Directory <%= "#{@params[:path]}/assets" %>>
+  <Directory <%= "#{@params[:path]}#{@params[:assets_path]}" %>>
     Options MultiViews
     <ifModule mod_expires.c>
     ExpiresDefault "access plus 1 year"
@@ -115,7 +115,7 @@
     <ifModule mod_expires.c>
     ExpiresActive On
     </ifModule>
-    <Directory <%= "#{@params[:path]}/assets" %>>
+    <Directory <%= "#{@params[:path]}#{@params[:assets_path]}" %>>
       Options MultiViews
       <ifModule mod_expires.c>
       ExpiresDefault "access plus 1 year"
